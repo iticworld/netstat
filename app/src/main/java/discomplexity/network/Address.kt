@@ -1,14 +1,8 @@
 package discomplexity.network
 
-import android.util.Log
-
 class Address() {
     var address: String? = null
     var port: Int? = null
-
-    init {
-
-    }
 
     constructor(address: String, port: Int): this() {
         this.address = address
@@ -19,7 +13,7 @@ class Address() {
         fun from(value: String): Address? {
             val strings = value.split(":")
             if(strings.size == 2) {
-                var temp = strings[0]
+                val temp = strings[0]
                 var address = ""
                 if(temp.length == 32) {
                     address += temp.substring(6, 8)
@@ -53,8 +47,6 @@ class Address() {
                     address += Integer.parseInt(temp.substring(2, 4), 16).toString()
                     address += "."
                     address += Integer.parseInt(temp.substring(0, 2), 16).toString()
-                } else {
-                    Log.i("UNKNOWN", value + "${temp.length}")
                 }
                 return Address(address, Integer.parseInt(strings[1], 16))
             }

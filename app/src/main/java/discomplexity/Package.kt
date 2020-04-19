@@ -5,7 +5,7 @@ import android.content.pm.PackageManager
 import android.graphics.drawable.Drawable
 
 class Package() {
-    var name: String? = null
+    private var name: String? = null
     var label: String? = null
     var icon: Drawable? = null
 

@@ -1,7 +1,6 @@
 package discomplexity.network
 
 import android.content.Context
-import android.util.Log
 import java.io.BufferedReader
 import java.io.IOException
 import java.io.InputStreamReader
@@ -29,7 +28,6 @@ class Status {
             val strings = line.split("\\s+".toRegex())
             if(index > 0)
             {
-                Log.i("TAG", line)
                 val entity = Entity()
 
                 entity.version = version
@@ -42,15 +40,7 @@ class Status {
                 entity.icon = info?.icon
                 entity.label = info?.label
 
-                Log.i("TAG", "${entity.local?.address}:${entity.local?.port}, ${entity.remote?.address}:${entity.remote?.port}, ${entity.status}, ${entity.uid}")
-
                 return entity
-            } else {
-                Log.i("TAG", line)
-                Log.i("TAG", strings[2])
-                Log.i("TAG", strings[3])
-                Log.i("TAG", strings[4])
-                Log.i("TAG", strings[10])
             }
             return null
         }
@@ -111,7 +101,6 @@ class Status {
                 val reader = BufferedReader(InputStreamReader(netstat.inputStream))
                 val entities = ArrayList<Entity?>()
                 reader.useLines { it.forEachIndexed{ index, value ->
-                    Log.i("LINE", value)
                     val entity = parse(index, version, value, context)
                     entity?.type = type
                     if(entity != null) {
