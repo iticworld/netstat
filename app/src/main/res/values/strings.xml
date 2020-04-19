@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">NETSTAT X</string>
+    <string name="version">VERSION</string>
+    <string name="status">STATUS</string>
+    <string name="icon">ICON</string>
+    <string name="label">LABEL</string>
+    <string name="type">TYPE</string>
+</resources>
