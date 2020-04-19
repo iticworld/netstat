@@ -7,7 +7,8 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import discomplexity.network.Entity
-import java.util.*
+import java.util.Timer
+import java.util.TimerTask
 import kotlin.collections.ArrayList
 
 class MainActivity : AppCompatActivity() {
