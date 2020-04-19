@@ -27,6 +27,15 @@ class RecyclerViewAdapter(private var list: List<Entity?>?): RecyclerView.Adapte
             view.findViewById<TextView>(R.id.destination).text = text
         }
 
+        fun setHttp(v: String?) {
+            if(v != null) {
+                view.findViewById<TextView>(R.id.http).visibility = View.VISIBLE
+                view.findViewById<TextView>(R.id.http).text = v
+            } else {
+                view.findViewById<TextView>(R.id.http).visibility = View.GONE
+            }
+        }
+
         fun setIcon(o: Drawable?) {
             view.findViewById<ImageView>(R.id.icon).setImageDrawable(o)
         }
@@ -84,6 +93,7 @@ class RecyclerViewAdapter(private var list: List<Entity?>?): RecyclerView.Adapte
             holder.setVersion(entity.version)
             holder.setLabel(entity.label)
             holder.setType(entity.type)
+            holder.setHttp(entity.http)
             if(entity.status != "LISTEN") {
                 holder.setDestination(entity.remote!!.address, entity.remote!!.port)
             } else {

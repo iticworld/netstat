@@ -103,6 +103,11 @@ class Status {
                 reader.useLines { it.forEachIndexed{ index, value ->
                     val entity = parse(index, version, value, context)
                     entity?.type = type
+                    if(entity?.remote?.port == 443) {
+                        entity.http = "HTTPS"
+                    } else if(entity?.remote?.port == 80) {
+                        entity.http = "HTTP"
+                    }
                     if(entity != null) {
                         entities.add(entity)
                     }

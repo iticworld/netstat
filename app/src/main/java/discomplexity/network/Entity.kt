@@ -11,4 +11,5 @@ class Entity {
     var icon: Drawable? = null          // APPLICATION ICON
     var label: String? = null           // APPLICATION LABEL
     var type: String? = null            // TYPE (TCP6, TCP, UDP)
+    var http: String? = null            // HTTP (HTTP, HTTPS)
 }

@@ -5,4 +5,5 @@
     <string name="icon">ICON</string>
     <string name="label">LABEL</string>
     <string name="type">TYPE</string>
+    <string name="http">HTTP</string>
 </resources>
