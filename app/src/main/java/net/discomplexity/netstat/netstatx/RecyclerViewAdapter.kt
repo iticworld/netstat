@@ -56,6 +56,12 @@ class RecyclerViewAdapter(private var list: List<Entity?>?): RecyclerView.Adapte
         }
     }
 
+    fun set(list: List<Entity?>?) {
+        this.list = list
+        Log.i("SCHEDULE", "RUN")
+        this.notifyDataSetChanged()
+    }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
         val inflatedView = LayoutInflater.from(parent.context).inflate(R.layout.list_item, parent, false)
         return Holder(inflatedView)
